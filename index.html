@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RUN. — Running Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            RUN<span>.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#collection">Collection</a>
+            <a href="#categories">Catégories</a>
+            <a href="#marques">Marques</a>
+            <a href="#nouveautes">Nouveautés</a>
+        </nav>
+
+        <a href="panier.html" class="cart-link">
+            🛒
+            <span id="cartCount">0</span>
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                RUNNING / PERFORMANCE / LIFESTYLE
+            </p>
+
+            <h1>
+                Run your<br>
+                own way.
+            </h1>
+
+            <p class="hero-text">
+                Des chaussures pensées pour chaque foulée,
+                chaque terrain et chaque objectif.
+            </p>
+
+            <a href="#collection" class="hero-button">
+                Découvrir la collection
+                <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+            <p>SCROLL</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section class="intro">
+
+        <div class="intro-left">
+
+            <p class="section-label">
+                RUNNING, SIMPLEMENT.
+            </p>
+
+            <h2>
+                La bonne chaussure.<br>
+                Pour la bonne course.
+            </h2>
+
+        </div>
+
+        <div class="intro-right">
+
+            <p>
+                Route, trail, entraînement ou compétition :
+                découvre une sélection de chaussures conçues
+                pour accompagner chaque type de course.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">
+                    EXPLORE
+                </p>
+
+                <h2>
+                    Choisis ton terrain.
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <a href="#collection" class="category-card"
+               onclick="filterCategory('route')">
+
+                <div class="category-image route-image"></div>
+
+                <div class="category-content">
+                    <span>01</span>
+                    <h3>Route</h3>
+                    <p>Asphalte & béton</p>
+                </div>
+
+            </a>
+
+
+            <a href="#collection" class="category-card"
+               onclick="filterCategory('trail')">
+
+                <div class="category-image trail-image"></div>
+
+                <div class="category-content">
+                    <span>02</span>
+                    <h3>Trail</h3>
+                    <p>Terre & sentiers</p>
+                </div>
+
+            </a>
+
+
+            <a href="#collection" class="category-card"
+               onclick="filterCategory('competition')">
+
+                <div class="category-image competition-image"></div>
+
+                <div class="category-content">
+                    <span>03</span>
+                    <h3>Compétition</h3>
+                    <p>Vitesse & performance</p>
+                </div>
+
+            </a>
+
+
+            <a href="#collection" class="category-card"
+               onclick="filterCategory('entrainement')">
+
+                <div class="category-image training-image"></div>
+
+                <div class="category-content">
+                    <span>04</span>
+                    <h3>Entraînement</h3>
+                    <p>Confort quotidien</p>
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MARQUES
+    ========================== -->
+
+    <section class="brands" id="marques">
+
+        <div class="section-header">
+
+            <div>
+                <p class="section-label">
+                    NOS MARQUES
+                </p>
+
+                <h2>
+                    Les références du running.
+                </h2>
+            </div>
+
+        </div>
+
+
+        <div class="brand-list">
+
+            <button onclick="filterBrand('all')">
+                Toutes
+            </button>
+
+            <button onclick="filterBrand('Nike')">
+                Nike
+            </button>
+
+            <button onclick="filterBrand('adidas')">
+                adidas
+            </button>
+
+            <button onclick="filterBrand('ASICS')">
+                ASICS
+            </button>
+
+            <button onclick="filterBrand('New Balance')">
+                New Balance
+            </button>
+
+            <button onclick="filterBrand('HOKA')">
+                HOKA
+            </button>
+
+            <button onclick="filterBrand('Brooks')">
+                Brooks
+            </button>
+
+            <button onclick="filterBrand('Saucony')">
+                Saucony
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COLLECTION
+    ========================== -->
+
+    <section class="collection" id="collection">
+
+        <div class="section-header collection-header">
+
+            <div>
+                <p class="section-label">
+                    COLLECTION
+                </p>
+
+                <h2>
+                    Trouve ta prochaine paire.
+                </h2>
+            </div>
+
+            <p id="resultCount">
+                28 modèles
+            </p>
+
+        </div>
+
+
+        <!-- FILTRES -->
+
+        <div class="filters">
+
+            <button class="filter active"
+                    onclick="filterCategory('all')">
+                Toutes
+            </button>
+
+            <button class="filter"
+                    onclick="filterCategory('route')">
+                Route
+            </button>
+
+            <button class="filter"
+                    onclick="filterCategory('trail')">
+                Trail
+            </button>
+
+            <button class="filter"
+                    onclick="filterCategory('competition')">
+                Compétition
+            </button>
+
+            <button class="filter"
+                    onclick="filterCategory('entrainement')">
+                Entraînement
+            </button>
+
+        </div>
+
+
+        <!-- PRODUITS -->
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- Les produits sont générés par JavaScript -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWSLETTER
+    ========================== -->
+
+    <section class="newsletter">
+
+        <div>
+
+            <p class="section-label">
+                STAY IN THE RUN
+            </p>
+
+            <h2>
+                Ne rate aucune nouveauté.
+            </h2>
+
+            <p>
+                Reçois les nouveaux modèles,
+                sorties et nouveautés running.
+            </p>
+
+        </div>
+
+
+        <form class="newsletter-form"
+              onsubmit="subscribe(event)">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Ton adresse email"
+                required
+            >
+
+            <button type="submit">
+                →
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div>
+
+                <a href="#" class="logo footer-logo">
+                    RUN<span>.</span>
+                </a>
+
+                <p>
+                    Run your own way.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <h4>Shop</h4>
+                    <a href="#collection">Collection</a>
+                    <a href="#categories">Catégories</a>
+                    <a href="#marques">Marques</a>
+                </div>
+
+                <div>
+                    <h4>Informations</h4>
+                    <a href="#">Livraison</a>
+                    <a href="#">Retours</a>
+                    <a href="#">Contact</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 RUN. — Tous droits réservés
+            </span>
+
+            <span>
+                Running / Performance / Lifestyle
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
